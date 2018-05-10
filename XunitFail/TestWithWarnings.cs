@@ -4,11 +4,11 @@ using Xunit;
 
 namespace XunitFail
 {
-    public abstract class ValidValue { }
+    public class ValidValue { }
 
     public class FooValue : ValidValue { }
 
-    public abstract class ValidValueTests<T> where T : ValidValue
+    public class ValidValueTests<T>
     {
     }
 
