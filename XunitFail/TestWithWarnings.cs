@@ -4,15 +4,7 @@ using Xunit;
 
 namespace XunitFail
 {
-    public class ValidValue { }
-
-    public class FooValue : ValidValue { }
-
-    public class ValidValueTests<T>
-    {
-    }
-
-    public class FooValueTests : ValidValueTests<FooValue>
+    public class FooValueTests
     {
 
         public static IEnumerable<object[]> Validities => new[]
