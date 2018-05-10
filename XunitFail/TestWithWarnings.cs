@@ -4,30 +4,17 @@ using Xunit;
 
 namespace XunitFail
 {
-    public abstract class BaseValue { }
-
-    public abstract class ValidValue : BaseValue { }
+    public abstract class ValidValue { }
 
     public class FooValue : ValidValue { }
 
-    public class TestObject<T> where T : BaseValue
-    {
-        public T Value { get; set; }
-    }
-
-    public abstract class BaseValueTests<T> where T : BaseValue
-    {
-    }
-
-    public abstract class ValidValueTests<T> : BaseValueTests<T>
-        where T : ValidValue
+    public abstract class ValidValueTests<T> where T : ValidValue
     {
 
         public static IEnumerable<object[]> Validities => new[]
-            {
-                    new object[] {TimeSpan.MaxValue}
-            };
-
+        {
+            new object[] {TimeSpan.MaxValue}
+        };
 
         [Theory]
         [MemberData(nameof(Validities))]
