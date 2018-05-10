@@ -10,6 +10,10 @@ namespace XunitFail
 
     public abstract class ValidValueTests<T> where T : ValidValue
     {
+    }
+
+    public class FooValueTests : ValidValueTests<FooValue>
+    {
 
         public static IEnumerable<object[]> Validities => new[]
         {
@@ -21,10 +25,6 @@ namespace XunitFail
         public void Should_Serialize_Validity_To_Valid_Json(TimeSpan validity)
         {
         }
-    }
-
-    public class FooValueTests : ValidValueTests<FooValue>
-    {
     }
 }
 
